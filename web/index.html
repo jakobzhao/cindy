@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Survey Data Viewer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Survey Results</p>
+          <h1>AI Prompt Writing Survey</h1>
+        </div>
+        <div class="source-note" id="sourceNote"></div>
+      </section>
+
+      <section class="controls" aria-label="数据筛选">
+        <label>
+          数据源
+          <select id="sourceSelect"></select>
+        </label>
+        <label>
+          工作表
+          <select id="sheetSelect"></select>
+        </label>
+        <label class="search-field">
+          搜索
+          <input id="searchInput" type="search" placeholder="输入关键词筛选表格" />
+        </label>
+      </section>
+
+      <section class="summary-grid" id="summaryGrid" aria-label="数据概览"></section>
+
+      <section class="chart-section" aria-label="分布统计">
+        <div class="chart-panel">
+          <div class="panel-heading">
+            <h2>AI 工具使用频率</h2>
+            <span id="frequencyTotal"></span>
+          </div>
+          <div id="frequencyBars" class="bars"></div>
+        </div>
+        <div class="chart-panel">
+          <div class="panel-heading">
+            <h2>Prompt 技能自评</h2>
+            <span id="skillAverage"></span>
+          </div>
+          <div id="skillBars" class="bars"></div>
+        </div>
+      </section>
+
+      <section class="table-section">
+        <div class="panel-heading table-heading">
+          <h2>明细数据</h2>
+          <span id="rowCount"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead id="tableHead"></thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./survey-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
